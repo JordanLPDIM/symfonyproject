@@ -18,6 +18,7 @@ return [
             [['_route' => 'app_lucky_number', '_controller' => 'App\\Controller\\LuckyController::number'], null, null, null, false, false, null],
             [['_route' => 'app_test', '_controller' => 'App\\Controller\\LuckyController::number'], null, null, null, false, false, null],
         ],
+        '/weather' => [[['_route' => 'weather', '_controller' => 'App\\Controller\\WeatherController::showWeather'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
