@@ -5,6 +5,10 @@
     <button type="submit">Valider</button>
 </form>
 
-<p>La température à {{ weatherData.name }} est de
-{{ weatherData.main.temp }}°C.</p>
 
+{% if weatherData.name != null %}
+    <p>La température à {{ weatherData.name }} est de
+{{ weatherData.main.temp }}°C.</p>
+{% else %}
+    <p>Entrez une ville</p>
+{% endif %}

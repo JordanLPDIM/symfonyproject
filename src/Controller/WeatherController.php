@@ -21,7 +21,7 @@ class WeatherController extends AbstractController
         if (!$city) {
             $city = 'Paris';
         }
-
+       
         $client = HttpClient::create();
         $response = $client->request('GET', 'https://api.openweathermap.org/data/2.5/weather', [
             'query' => [
@@ -40,6 +40,8 @@ class WeatherController extends AbstractController
         } else {
             echo "erreur du get";
         }
+
+       
 
         return $this->render('weather/show.html.twig', [
             'weatherData' => $weatherData,

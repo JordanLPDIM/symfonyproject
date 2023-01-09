@@ -47,16 +47,24 @@ class __TwigTemplate_37ff4c32fcf5ba538d3f80e50687b6e6 extends Template
     <button type=\"submit\">Valider</button>
 </form>
 
-<p>La température à ";
-        // line 8
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["weatherData"]) || array_key_exists("weatherData", $context) ? $context["weatherData"] : (function () { throw new RuntimeError('Variable "weatherData" does not exist.', 8, $this->source); })()), "name", [], "any", false, false, false, 8), "html", null, true);
-        echo " est de
-";
-        // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["weatherData"]) || array_key_exists("weatherData", $context) ? $context["weatherData"] : (function () { throw new RuntimeError('Variable "weatherData" does not exist.', 9, $this->source); })()), "main", [], "any", false, false, false, 9), "temp", [], "any", false, false, false, 9), "html", null, true);
-        echo "°C.</p>
 
 ";
+        // line 9
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["weatherData"]) || array_key_exists("weatherData", $context) ? $context["weatherData"] : (function () { throw new RuntimeError('Variable "weatherData" does not exist.', 9, $this->source); })()), "name", [], "any", false, false, false, 9) != null)) {
+            // line 10
+            echo "    <p>La température à ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["weatherData"]) || array_key_exists("weatherData", $context) ? $context["weatherData"] : (function () { throw new RuntimeError('Variable "weatherData" does not exist.', 10, $this->source); })()), "name", [], "any", false, false, false, 10), "html", null, true);
+            echo " est de
+";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["weatherData"]) || array_key_exists("weatherData", $context) ? $context["weatherData"] : (function () { throw new RuntimeError('Variable "weatherData" does not exist.', 11, $this->source); })()), "main", [], "any", false, false, false, 11), "temp", [], "any", false, false, false, 11), "html", null, true);
+            echo "°C.</p>
+";
+        } else {
+            // line 13
+            echo "    <p>Entrez une ville</p>
+";
+        }
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
 
@@ -77,7 +85,7 @@ class __TwigTemplate_37ff4c32fcf5ba538d3f80e50687b6e6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  56 => 9,  52 => 8,  43 => 1,);
+        return array (  65 => 13,  60 => 11,  55 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -89,9 +97,13 @@ class __TwigTemplate_37ff4c32fcf5ba538d3f80e50687b6e6 extends Template
     <button type=\"submit\">Valider</button>
 </form>
 
-<p>La température à {{ weatherData.name }} est de
-{{ weatherData.main.temp }}°C.</p>
 
+{% if weatherData.name != null %}
+    <p>La température à {{ weatherData.name }} est de
+{{ weatherData.main.temp }}°C.</p>
+{% else %}
+    <p>Entrez une ville</p>
+{% endif %}
 ", "weather/show.html.twig", "C:\\symfonyproject\\templates\\weather\\show.html.twig");
     }
 }

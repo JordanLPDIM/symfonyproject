@@ -31,6 +31,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -68,7 +69,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         ";
         // line 17
         $this->displayBlock('body', $context, $blocks);
-        // line 18
+        // line 28
         echo "    </body>
 </html>
 ";
@@ -155,6 +156,42 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
+        // line 18
+        echo "        <h1> Layout ici </h1>
+
+        ";
+        // line 20
+        $this->displayBlock('content', $context, $blocks);
+        // line 25
+        echo "
+        
+        ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 20
+    public function block_content($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
+
+        // line 21
+        echo "
+        ";
+        // line 22
+        $this->loadTemplate("home/index.html.twig", "base.html.twig", 22)->display($context);
+        // line 23
+        echo "        
+        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -170,7 +207,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
 
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  193 => 23,  191 => 22,  188 => 21,  178 => 20,  166 => 25,  164 => 20,  160 => 18,  150 => 17,  137 => 13,  127 => 12,  114 => 9,  104 => 8,  85 => 5,  73 => 28,  71 => 17,  67 => 15,  65 => 12,  62 => 11,  59 => 8,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -191,7 +228,17 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+        <h1> Layout ici </h1>
+
+        {% block content %}
+
+        {% include 'home/index.html.twig' %}
+        
+        {% endblock %}
+
+        
+        {% endblock %}
     </body>
 </html>
 ", "base.html.twig", "C:\\symfonyproject\\templates\\base.html.twig");
