@@ -65,7 +65,7 @@ class __TwigTemplate_7374627a07e88971ee2ab099933dba47 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello HomeController!";
+        echo "Accueil";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -74,7 +74,7 @@ class __TwigTemplate_7374627a07e88971ee2ab099933dba47 extends Template
 
     }
 
-    // line 6
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,23 +84,56 @@ class __TwigTemplate_7374627a07e88971ee2ab099933dba47 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 7
-        echo "<style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #333333;
-        margin: 0;
-    }
+        // line 6
+        echo "
+<div class=\"accueil--body\">
+    <h1> Accueil</h1>
 
-    h1{
-        color:blue;
-    }
-</style>
+    <h2> Ecrivez un message </h2>
 
+    ";
+        // line 12
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), 'form_start');
+        echo "
+    ";
+        // line 13
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), 'widget');
+        echo "
+    <input type=\"submit\" value=\"save\">
+    ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form_end');
+        echo "
 
-<div class=\"\">
-    <h1>Vue page d'accueil! ✅</h1>
+    <div class=\"separator\"> </div>
 
+    <div class=\"accueil--messages\"> 
+    
+    ";
+        // line 21
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 21, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
+            // line 22
+            echo "    <div>
+    ";
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 23), "html", null, true);
+            echo ": ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 23), "html", null, true);
+            echo "<br>
+    </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 26
+        echo "    
+    
+    
+    </div>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -122,33 +155,41 @@ class __TwigTemplate_7374627a07e88971ee2ab099933dba47 extends Template
 
     public function getDebugInfo()
     {
-        return array (  88 => 7,  78 => 6,  59 => 3,  36 => 1,);
+        return array (  132 => 26,  121 => 23,  118 => 22,  114 => 21,  105 => 15,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #333333;
-        margin: 0;
-    }
 
-    h1{
-        color:blue;
-    }
-</style>
+<div class=\"accueil--body\">
+    <h1> Accueil</h1>
 
+    <h2> Ecrivez un message </h2>
 
-<div class=\"\">
-    <h1>Vue page d'accueil! ✅</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type=\"submit\" value=\"save\">
+    {{ form_end(form) }}
 
+    <div class=\"separator\"> </div>
+
+    <div class=\"accueil--messages\"> 
+    
+    {% for entity in entities %}
+    <div>
+    {{ entity.id }}: {{ entity.content }}<br>
+    </div>
+    {% endfor %}
+    
+    
+    
+    </div>
+</div>
 {% endblock %}
 ", "home/index.html.twig", "C:\\symfonyproject\\templates\\home\\index.html.twig");
     }

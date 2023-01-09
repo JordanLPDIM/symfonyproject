@@ -30,8 +30,8 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
             'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
+            'sidebar' => [$this, 'block_sidebar'],
             'body' => [$this, 'block_body'],
-            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -53,24 +53,90 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         // line 5
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+        
+
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
-        // line 8
+        // line 10
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
+        // line 13
         echo "
         ";
-        // line 12
+        // line 14
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
-        echo "    </head>
-    <body>
-        ";
         // line 17
+        echo "           
+    </head>
+
+    <style>
+
+    h1{
+        color:red;
+    }
+
+    .layout--flex{
+        display:flex;
+        flex-direction:row;
+        gap: 30px;
+    }
+
+    .sidebar{
+
+        border:1px solid black;
+        min-height:700px;
+        min-width:160px;
+        gap:20px;
+        border-radius:6px;
+        background-color:lightgrey;
+    }
+
+    ul li{
+        text-decoration:none;
+    }
+
+    #content{
+        border:1px solid grey;
+        border-radius:6px;
+        min-width:500px;
+    }
+
+    .separator{
+        width:80%;
+        border:1px dotted grey;
+        margin:auto;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    </style>
+
+
+   <body>
+
+    <div class=\"layout--flex\">
+
+        <div class=\"sidebar\">
+
+            ";
+        // line 69
+        $this->displayBlock('sidebar', $context, $blocks);
+        // line 77
+        echo "        </div>
+
+
+        <div id=\"content\">
+            ";
+        // line 81
         $this->displayBlock('body', $context, $blocks);
-        // line 28
-        echo "    </body>
+        // line 82
+        echo "        </div>
+
+    </div>
+
+
+</body>
+</html>
 </html>
 ";
         
@@ -100,7 +166,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
 
     }
 
-    // line 8
+    // line 10
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -110,7 +176,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
+        // line 11
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -123,7 +189,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
 
     }
 
-    // line 12
+    // line 14
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -133,7 +199,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 15
         echo "            ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
@@ -146,7 +212,33 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
 
     }
 
-    // line 17
+    // line 69
+    public function block_sidebar($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
+
+        // line 70
+        echo "            <h2> Fake Twitter </h2>
+                <ul class=\"sidebar--ul\">
+                    <li><a href=\"/\">Accueil</a></li>
+                    <li><a href=\"/\">Profil</a></li>
+                    <li><a href=\"/login\">Connexion</a></li>
+                </ul>
+            ";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,42 +248,6 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 18
-        echo "        <h1> Layout ici </h1>
-
-        ";
-        // line 20
-        $this->displayBlock('content', $context, $blocks);
-        // line 25
-        echo "
-        
-        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 20
-    public function block_content($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
-
-        // line 21
-        echo "
-        ";
-        // line 22
-        $this->loadTemplate("home/index.html.twig", "base.html.twig", 22)->display($context);
-        // line 23
-        echo "        
-        ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -207,7 +263,7 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
 
     public function getDebugInfo()
     {
-        return array (  193 => 23,  191 => 22,  188 => 21,  178 => 20,  166 => 25,  164 => 20,  160 => 18,  150 => 17,  137 => 13,  127 => 12,  114 => 9,  104 => 8,  85 => 5,  73 => 28,  71 => 17,  67 => 15,  65 => 12,  62 => 11,  59 => 8,  54 => 5,  48 => 1,);
+        return array (  242 => 81,  226 => 70,  216 => 69,  203 => 15,  193 => 14,  180 => 11,  170 => 10,  151 => 5,  133 => 82,  131 => 81,  125 => 77,  123 => 69,  69 => 17,  67 => 14,  64 => 13,  61 => 10,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -217,6 +273,8 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
     <head>
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
+        
+
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
@@ -226,20 +284,78 @@ class __TwigTemplate_9232e2f5e3b6d4b1c15f1f95f40459ba extends Template
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
+           
     </head>
-    <body>
-        {% block body %}
-        <h1> Layout ici </h1>
 
-        {% block content %}
+    <style>
 
-        {% include 'home/index.html.twig' %}
-        
-        {% endblock %}
+    h1{
+        color:red;
+    }
 
-        
-        {% endblock %}
-    </body>
+    .layout--flex{
+        display:flex;
+        flex-direction:row;
+        gap: 30px;
+    }
+
+    .sidebar{
+
+        border:1px solid black;
+        min-height:700px;
+        min-width:160px;
+        gap:20px;
+        border-radius:6px;
+        background-color:lightgrey;
+    }
+
+    ul li{
+        text-decoration:none;
+    }
+
+    #content{
+        border:1px solid grey;
+        border-radius:6px;
+        min-width:500px;
+    }
+
+    .separator{
+        width:80%;
+        border:1px dotted grey;
+        margin:auto;
+        margin-top:20px;
+        margin-bottom:20px;
+    }
+
+    </style>
+
+
+   <body>
+
+    <div class=\"layout--flex\">
+
+        <div class=\"sidebar\">
+
+            {% block sidebar %}
+            <h2> Fake Twitter </h2>
+                <ul class=\"sidebar--ul\">
+                    <li><a href=\"/\">Accueil</a></li>
+                    <li><a href=\"/\">Profil</a></li>
+                    <li><a href=\"/login\">Connexion</a></li>
+                </ul>
+            {% endblock %}
+        </div>
+
+
+        <div id=\"content\">
+            {% block body %}{% endblock %}
+        </div>
+
+    </div>
+
+
+</body>
+</html>
 </html>
 ", "base.html.twig", "C:\\symfonyproject\\templates\\base.html.twig");
     }

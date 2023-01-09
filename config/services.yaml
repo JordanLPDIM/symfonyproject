@@ -20,6 +20,9 @@ services:
             - '../src/Entity/'
             - '../src/Kernel.php'
     
+    App\Repository\TweetsRepository:
+        tags:
+        - { name: doctrine.repository_service }
    
 
     # add more service definitions when explicit configuration is needed

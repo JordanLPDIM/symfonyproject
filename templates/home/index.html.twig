@@ -1,23 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        color: #333333;
-        margin: 0;
-    }
 
-    h1{
-        color:blue;
-    }
-</style>
+<div class="accueil--body">
+    <h1> Accueil</h1>
 
+    <h2> Ecrivez un message </h2>
 
-<div class="">
-    <h1>Vue page d'accueil! ✅</h1>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <input type="submit" value="save">
+    {{ form_end(form) }}
 
+    <div class="separator"> </div>
+
+    <div class="accueil--messages"> 
+    
+    {% for entity in entities %}
+    <div>
+    {{ entity.id }}: {{ entity.content }}<br>
+    </div>
+    {% endfor %}
+    
+    
+    
+    </div>
+</div>
 {% endblock %}
