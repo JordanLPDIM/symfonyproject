@@ -12,6 +12,8 @@ weather:
     path: /weather
     controller: App\Controller\WeatherController::showWeather
 
-message_new:
-    path: /
+app_home_new:
+    path: /new
+    methods: [GET, POST]
     controller: App\Controller\HomeController::new
+

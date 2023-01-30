@@ -14,9 +14,10 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/' => [
-            [['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null],
-            [['_route' => 'message_new', '_controller' => 'App\\Controller\\HomeController::new'], null, null, null, false, false, null],
+        '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
+        '/new' => [
+            [['_route' => 'app_new_tweet', '_controller' => 'App\\Controller\\HomeController::new'], null, null, null, false, false, null],
+            [['_route' => 'app_home_new', '_controller' => 'App\\Controller\\HomeController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null],
         ],
         '/message' => [[['_route' => 'app_message', '_controller' => 'App\\Controller\\MessageController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

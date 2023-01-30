@@ -91,30 +91,26 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     <h2> Ecrivez un tweet </h2>
 
-   <form action=\"";
-        // line 12
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("message_new");
-        echo "\" method=\"post\">
-        <input type=\"text\" id=\"message\" name=\"message\" placeholder=\"Ecrivez votre msg..\">
-        <input type=\"submit\" value=\"Envoyer\">
-   </form>
+ ";
+        // line 16
+        echo "
 
    <br />
 
         <div class=\"accueil--messages\"> 
         
         ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 21, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 22, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 22
+            // line 23
             echo "        <div class=\"tweet\">
         ";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 23), "html", null, true);
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 24), "html", null, true);
             echo ": ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 23), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 24), "html", null, true);
             echo "<br>
         </div>
         
@@ -123,12 +119,16 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 28
         echo "
    
     
     
     </div>
+    <a href=\"";
+        // line 33
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_new");
+        echo "\">Ecrire un un tweet</a>
 </div>
 ";
         
@@ -151,7 +151,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     public function getDebugInfo()
     {
-        return array (  127 => 27,  115 => 23,  112 => 22,  108 => 21,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  130 => 33,  123 => 28,  111 => 24,  108 => 23,  104 => 22,  96 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -167,10 +167,11 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     <h2> Ecrivez un tweet </h2>
 
-   <form action=\"{{ path('message_new') }}\" method=\"post\">
+ {#   <form action=\"{{ path('message_new') }}\" method=\"post\">
         <input type=\"text\" id=\"message\" name=\"message\" placeholder=\"Ecrivez votre msg..\">
         <input type=\"submit\" value=\"Envoyer\">
-   </form>
+   </form> #}
+
 
    <br />
 
@@ -187,6 +188,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
     
     
     </div>
+    <a href=\"{{ path('app_home_new') }}\">Ecrire un un tweet</a>
 </div>
 {% endblock %}
 ", "home/index.html.twig", "C:\\symfonyproject\\templates\\home\\index.html.twig");
