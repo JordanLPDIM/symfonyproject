@@ -12,7 +12,7 @@ class FormTweetType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Content')
+            ->add('Message')
             
           
         ;

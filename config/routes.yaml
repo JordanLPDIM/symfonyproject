@@ -11,3 +11,7 @@ app_test:
 weather:
     path: /weather
     controller: App\Controller\WeatherController::showWeather
+
+message_new:
+    path: /
+    controller: App\Controller\HomeController::new

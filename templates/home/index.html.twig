@@ -4,26 +4,28 @@
 
 {% block body %}
 
+
 <div class="accueil--body">
-    <h1> Accueil</h1>
 
-    <h2> Ecrivez un message </h2>
+    <h2> Ecrivez un tweet </h2>
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <input type="submit" value="save">
-    {{ form_end(form) }}
+   <form action="{{ path('message_new') }}" method="post">
+        <input type="text" id="message" name="message" placeholder="Ecrivez votre msg..">
+        <input type="submit" value="Envoyer">
+   </form>
 
-    <div class="separator"> </div>
+   <br />
 
-    <div class="accueil--messages"> 
-    
-    {% for entity in entities %}
-    <div>
-    {{ entity.id }}: {{ entity.content }}<br>
-    </div>
-    {% endfor %}
-    
+        <div class="accueil--messages"> 
+        
+        {% for entity in entities %}
+        <div class="tweet">
+        {{ entity.id }}: {{ entity.content }}<br>
+        </div>
+        
+        {% endfor %}
+
+   
     
     
     </div>
