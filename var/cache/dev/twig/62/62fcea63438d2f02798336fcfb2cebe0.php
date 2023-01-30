@@ -57,9 +57,14 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         echo "        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
         // line 9
-        echo "      
+        echo "       <!-- CSS de Bootstrap -->
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
 
-           
+<!-- JavaScript de Bootstrap -->
+<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
+       
     </head>
 
     <style>
@@ -124,25 +129,25 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         <div class=\"sidebar\">
 
             ";
-        // line 75
+        // line 80
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 83
+        // line 88
         echo "        </div>
 
 
         <div id=\"content\">
             ";
-        // line 87
+        // line 92
         $this->displayBlock('body', $context, $blocks);
-        // line 88
+        // line 93
         echo "        </div>
 
     </div>
     
     ";
-        // line 92
+        // line 97
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 93
+        // line 98
         echo "
 </body>
 </html>
@@ -175,7 +180,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 75
+    // line 80
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -185,7 +190,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 76
+        // line 81
         echo "            <h2> Twitter </h2>
                 <ul class=\"sidebar--ul\">
                     <li><a href=\"/\">Accueil</a></li>
@@ -201,7 +206,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 87
+    // line 92
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -219,7 +224,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 92
+    // line 97
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -245,7 +250,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  223 => 92,  205 => 87,  189 => 76,  179 => 75,  160 => 5,  146 => 93,  144 => 92,  138 => 88,  136 => 87,  130 => 83,  128 => 75,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  228 => 97,  210 => 92,  194 => 81,  184 => 80,  165 => 5,  151 => 98,  149 => 97,  143 => 93,  141 => 92,  135 => 88,  133 => 80,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -258,9 +263,14 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         {# <link rel=\"stylesheet\" href=\"{{ path('../public/assets/styles/app.css') }}\" type=\"text/css\"> #}
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-      
+       <!-- CSS de Bootstrap -->
+<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\" integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">
 
-           
+<!-- JavaScript de Bootstrap -->
+<script src=\"https://code.jquery.com/jquery-3.4.1.slim.min.js\" integrity=\"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n\" crossorigin=\"anonymous\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js\" integrity=\"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo\" crossorigin=\"anonymous\"></script>
+<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js\" integrity=\"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6\" crossorigin=\"anonymous\"></script>
+       
     </head>
 
     <style>

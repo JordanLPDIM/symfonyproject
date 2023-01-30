@@ -106,3 +106,8 @@ af225e,127.0.0.1,GET,http://localhost:8000/,1675070678,,200
 ce9fc9,127.0.0.1,GET,http://localhost:8000/new,1675070682,,200
 f117e2,127.0.0.1,POST,http://localhost:8000/new,1675070690,,302
 e407d0,127.0.0.1,GET,http://localhost:8000/,1675070691,,200
+d66aab,127.0.0.1,GET,http://localhost:8000/login,1675070764,,200
+883e7f,127.0.0.1,GET,http://localhost:8000/favicon.ico,1675070765,df3c30,404
+df3c30,127.0.0.1,GET,http://localhost:8000/favicon.ico,1675070765,,404
+d4b414,127.0.0.1,GET,http://localhost:8000/,1675070840,,200
+05f493,127.0.0.1,GET,http://localhost:8000/,1675071187,,200

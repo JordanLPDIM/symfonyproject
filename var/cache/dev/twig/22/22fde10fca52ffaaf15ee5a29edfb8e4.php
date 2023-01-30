@@ -128,7 +128,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
     <a href=\"";
         // line 33
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_new");
-        echo "\">Ecrire un un tweet</a>
+        echo "\">Ecrire un tweet</a>
 </div>
 ";
         
@@ -188,7 +188,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
     
     
     </div>
-    <a href=\"{{ path('app_home_new') }}\">Ecrire un un tweet</a>
+    <a href=\"{{ path('app_home_new') }}\">Ecrire un tweet</a>
 </div>
 {% endblock %}
 ", "home/index.html.twig", "C:\\symfonyproject\\templates\\home\\index.html.twig");
