@@ -22,9 +22,10 @@ class Tweets
 
     #[ORM\Column]
      /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="child")
+     * @ORM\OneToMany(targetEntity="User", mappedBy="tweets")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
-    private ?int $idUser = null;
+    private ?int $user = null;
 
     public function getId(): ?int
     {
@@ -57,7 +58,7 @@ class Tweets
 
     public function getIdUser(): ?int
     {
-        return $this->idUser;
+        return $this->user;
     }
 
     public function setIdUser(int $idUser): self

@@ -30,7 +30,10 @@ services:
     App\Repository\UsersRepository:
         tags:
         - { name: doctrine.repository_service }
-
+    
+    app.token_authenticator:
+        class: AppBundle\Security\LoginFormAuthenticator
+        arguments: ['@doctrine.orm.entity_manager']
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 

@@ -3,11 +3,15 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['username'], message: 'There is already an account with this username')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -26,6 +30,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    #[ORM\Column]
+    /**
+     * @ORM\OneToMany(targetEntity="Tweets", mappedBy="user")
+     */
+    private $tweets;
+
+    #[ORM\Column]
+    /**
+     * @ORM\OneToMany(targetEntity="Subscribe", mappedBy="user")
+     */
+    private $subscriptions;
+
+    #[ORM\Column]
+    /**
+     * @ORM\OneToMany(targetEntity="Subscribe", mappedBy="subscriber")
+     */
+    private $subscribers;
+
+    public function __construct()
+    {
+        $this->tweets = new ArrayCollection();
+        $this->subscriptions = new ArrayCollection();
+        $this->subscribers = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -95,5 +125,35 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Subscribe>
+     */
+    public function getSubscriber(): Collection
+    {
+        return $this->subscriber;
+    }
+
+    public function addSubscriber(Subscribe $subscriber): self
+    {
+        if (!$this->subscriber->contains($subscriber)) {
+            $this->subscriber->add($subscriber);
+            $subscriber->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSubscriber(Subscribe $subscriber): self
+    {
+        if ($this->subscriber->removeElement($subscriber)) {
+            // set the owning side to null (unless already changed)
+            if ($subscriber->getUser() === $this) {
+                $subscriber->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }

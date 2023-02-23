@@ -7,7 +7,7 @@
 
 <div class="accueil--body">
 
-    <h2> Ecrivez un tweet </h2>
+    <h2> Tweets </h2>
 
  {#   <form action="{{ path('message_new') }}" method="post">
         <input type="text" id="message" name="message" placeholder="Ecrivez votre msg..">
@@ -26,10 +26,8 @@
         
         {% endfor %}
 
-   
-    
-    
+
     </div>
-    <a href="{{ path('app_home_new') }}">Ecrire un tweet</a>
+    <a class="position-absolute" style="right: 10px;" href="{{ path('app_home_new') }}">Ecrire un tweet</a>
 </div>
 {% endblock %}

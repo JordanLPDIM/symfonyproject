@@ -8,26 +8,17 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: username
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        main:
-            lazy: true
-            provider: app_user_provider
-            # guard:
-            #     authenticators:
-            #         - App\Security\LoginFormAuthenticator
-            #         - App\Security\ApiTokenAuthenticator
-            #     entry_point: App\Security\LoginFormAuthenticator
-            # form_login:
-            #     login_path: login
-            #     check_path: login
-            #     enable_csrf: true
-            #     default_target_path: homepage
-            #     # where to redirect after logout
-            #     # target: app_any_route
+        #main:
+            #guard:
+                #authenticators:
+                    #- App\Security\LoginFormAuthenticator
+            logout:
+                path: app_logout
             # http_basic:
             #     realm: "Secured Area"
             # activate different ways to authenticate

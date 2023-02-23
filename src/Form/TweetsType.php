@@ -6,6 +6,9 @@ use App\Entity\Tweets;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Event\PreSubmitEvent;
+use Symfony\Component\Form\FormEvents;
 
 class TweetsType extends AbstractType
 {
@@ -16,6 +19,8 @@ class TweetsType extends AbstractType
             ->add('Date')
             ->add('idUser')
         ;
+
+  
     }
 
     public function configureOptions(OptionsResolver $resolver): void

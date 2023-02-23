@@ -89,7 +89,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
 <div class=\"accueil--body\">
 
-    <h2> Ecrivez un tweet </h2>
+    <h2> Tweets </h2>
 
  ";
         // line 16
@@ -121,12 +121,10 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 28
         echo "
-   
-    
-    
+
     </div>
-    <a href=\"";
-        // line 33
+    <a class=\"position-absolute\" style=\"right: 10px;\" href=\"";
+        // line 31
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_new");
         echo "\">Ecrire un tweet</a>
 </div>
@@ -151,7 +149,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     public function getDebugInfo()
     {
-        return array (  130 => 33,  123 => 28,  111 => 24,  108 => 23,  104 => 22,  96 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  128 => 31,  123 => 28,  111 => 24,  108 => 23,  104 => 22,  96 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -165,7 +163,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
 <div class=\"accueil--body\">
 
-    <h2> Ecrivez un tweet </h2>
+    <h2> Tweets </h2>
 
  {#   <form action=\"{{ path('message_new') }}\" method=\"post\">
         <input type=\"text\" id=\"message\" name=\"message\" placeholder=\"Ecrivez votre msg..\">
@@ -184,11 +182,9 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
         
         {% endfor %}
 
-   
-    
-    
+
     </div>
-    <a href=\"{{ path('app_home_new') }}\">Ecrire un tweet</a>
+    <a class=\"position-absolute\" style=\"right: 10px;\" href=\"{{ path('app_home_new') }}\">Ecrire un tweet</a>
 </div>
 {% endblock %}
 ", "home/index.html.twig", "C:\\symfonyproject\\templates\\home\\index.html.twig");

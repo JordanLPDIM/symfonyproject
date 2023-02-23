@@ -73,10 +73,17 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         color:red;
     }
 
+    body{
+        width:80%;
+        margin:auto;
+    }
+
     .layout--flex{
         display:flex;
         flex-direction:row;
         gap: 30px;
+        width:100%;
+        margin:auto;
     }
 
     .sidebar{
@@ -97,6 +104,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         border:1px solid grey;
         border-radius:6px;
         min-width:700px;
+        position:relative;
     }
 
     .separator{
@@ -113,12 +121,6 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         padding:5px;
     }
 
-
-
-
-
-
-
     </style>
 
 
@@ -129,25 +131,27 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         <div class=\"sidebar\">
 
             ";
-        // line 80
+        // line 82
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 88
+        // line 90
         echo "        </div>
 
 
         <div id=\"content\">
             ";
-        // line 92
+        // line 94
         $this->displayBlock('body', $context, $blocks);
-        // line 93
+        // line 95
         echo "        </div>
+
+
 
     </div>
     
     ";
-        // line 97
+        // line 101
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 98
+        // line 102
         echo "
 </body>
 </html>
@@ -180,7 +184,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 80
+    // line 82
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -190,12 +194,12 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 81
-        echo "            <h2> Twitter </h2>
+        // line 83
+        echo "            <h2 class=\"text-center mb-5 mt-2\"> Twitter </h2>
                 <ul class=\"sidebar--ul\">
-                    <li><a href=\"/\">Accueil</a></li>
-                    <li><a href=\"/\">Profil</a></li>
-                    <li><a href=\"/login\">Connexion</a></li>
+                    <li class=\"mb-1\"><a href=\"/\">Accueil</a></li>
+                    <li class=\"mb-1\"><a href=\"/\">Profil</a></li>
+                    <li class=\"mb-1\"><a href=\"/login\">Connexion</a></li>
                 </ul>
             ";
         
@@ -206,7 +210,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 92
+    // line 94
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -224,7 +228,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 97
+    // line 101
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -250,7 +254,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  228 => 97,  210 => 92,  194 => 81,  184 => 80,  165 => 5,  151 => 98,  149 => 97,  143 => 93,  141 => 92,  135 => 88,  133 => 80,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  232 => 101,  214 => 94,  198 => 83,  188 => 82,  169 => 5,  155 => 102,  153 => 101,  145 => 95,  143 => 94,  137 => 90,  135 => 82,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -279,10 +283,17 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         color:red;
     }
 
+    body{
+        width:80%;
+        margin:auto;
+    }
+
     .layout--flex{
         display:flex;
         flex-direction:row;
         gap: 30px;
+        width:100%;
+        margin:auto;
     }
 
     .sidebar{
@@ -303,6 +314,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         border:1px solid grey;
         border-radius:6px;
         min-width:700px;
+        position:relative;
     }
 
     .separator{
@@ -319,12 +331,6 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         padding:5px;
     }
 
-
-
-
-
-
-
     </style>
 
 
@@ -335,11 +341,11 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         <div class=\"sidebar\">
 
             {% block sidebar %}
-            <h2> Twitter </h2>
+            <h2 class=\"text-center mb-5 mt-2\"> Twitter </h2>
                 <ul class=\"sidebar--ul\">
-                    <li><a href=\"/\">Accueil</a></li>
-                    <li><a href=\"/\">Profil</a></li>
-                    <li><a href=\"/login\">Connexion</a></li>
+                    <li class=\"mb-1\"><a href=\"/\">Accueil</a></li>
+                    <li class=\"mb-1\"><a href=\"/\">Profil</a></li>
+                    <li class=\"mb-1\"><a href=\"/login\">Connexion</a></li>
                 </ul>
             {% endblock %}
         </div>
@@ -348,6 +354,8 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         <div id=\"content\">
             {% block body %}{% endblock %}
         </div>
+
+
 
     </div>
     

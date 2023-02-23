@@ -21,11 +21,10 @@ class HomeController extends AbstractController
     private $em;
 
     public function __construct(ManagerRegistry $doctrine)
-{
-    $this->em = $doctrine;
-}
+    {
+        $this->em = $doctrine;
+    }
 
-    
 
     /**
      * @Route("/", name="app_home")
