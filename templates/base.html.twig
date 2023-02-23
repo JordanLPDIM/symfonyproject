@@ -90,9 +90,9 @@
           
              <div class="collapse navbar-collapse" id="collapsibleNavbar">
              <ul class="navbar-nav ml-auto">
-                <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                <li class="ml-2"><a href="{{ path('app_home') }}">Accueil</a></li>
                       {% if app.user %}
-                        <li class="ml-4"><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                        <li class="ml-2"><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
                     {% else %}
                         <li class="ml-2"><a href="{{ path('app_login') }}">Se connecter</a></li>
                     {% endif %}

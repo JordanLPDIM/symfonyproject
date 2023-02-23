@@ -162,7 +162,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
           
              <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
              <ul class=\"navbar-nav ml-auto\">
-                <li><a href=\"";
+                <li class=\"ml-2\"><a href=\"";
         // line 93
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         echo "\">Accueil</a></li>
@@ -170,7 +170,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         // line 94
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 94, $this->source); })()), "user", [], "any", false, false, false, 94)) {
             // line 95
-            echo "                        <li class=\"ml-4\"><a href=\"";
+            echo "                        <li class=\"ml-2\"><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Se déconnecter</a></li>
                     ";
@@ -340,9 +340,9 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
           
              <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
              <ul class=\"navbar-nav ml-auto\">
-                <li><a href=\"{{ path('app_home') }}\">Accueil</a></li>
+                <li class=\"ml-2\"><a href=\"{{ path('app_home') }}\">Accueil</a></li>
                       {% if app.user %}
-                        <li class=\"ml-4\"><a href=\"{{ path('app_logout') }}\">Se déconnecter</a></li>
+                        <li class=\"ml-2\"><a href=\"{{ path('app_logout') }}\">Se déconnecter</a></li>
                     {% else %}
                         <li class=\"ml-2\"><a href=\"{{ path('app_login') }}\">Se connecter</a></li>
                     {% endif %}
