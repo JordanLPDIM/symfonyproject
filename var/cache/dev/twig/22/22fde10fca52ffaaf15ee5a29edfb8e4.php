@@ -94,14 +94,14 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
    <br />
 
-    <div class=\"container w-100\">
+    <div class=\"container\">
     <h2> Accueil </h2>
-    <button type=\"submit\" class=\"btn btn-primary\"><a href=\"";
+    <a href=\"";
         // line 19
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_new");
-        echo "\"></a> Tweeter</button>
-  <div class=\"row justify-content-center w-100\">
-    <div class=\"col-md-8 w-100\">
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\" class=\"btn btn-primary mb-4\">Ecrire un Tweet</a>
+  <div class=\"row justify-content-center\">
+    <div class=\"col-md-8\">
       <ul class=\"list-group mb-20\">
         
          ";
@@ -110,8 +110,8 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
             // line 25
-            echo "        <li class=\"list-group-item w-100\">
-        <div class=\"d-flex justify-content-between align-items-center w-100\">
+            echo "        <li class=\"list-group-item\">
+        <div class=\"d-flex justify-content-between align-items-center\">
             <div>
             <h5 class=\"mb-0\">";
             // line 28
@@ -193,16 +193,16 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
    <br />
 
-    <div class=\"container w-100\">
+    <div class=\"container\">
     <h2> Accueil </h2>
-    <button type=\"submit\" class=\"btn btn-primary\"><a href=\"{{ path('app_home_new') }}\"></a> Tweeter</button>
-  <div class=\"row justify-content-center w-100\">
-    <div class=\"col-md-8 w-100\">
+    <a href=\"{{ path('app_home') }}\" class=\"btn btn-primary mb-4\">Ecrire un Tweet</a>
+  <div class=\"row justify-content-center\">
+    <div class=\"col-md-8\">
       <ul class=\"list-group mb-20\">
         
          {% for entity in entities %}
-        <li class=\"list-group-item w-100\">
-        <div class=\"d-flex justify-content-between align-items-center w-100\">
+        <li class=\"list-group-item\">
+        <div class=\"d-flex justify-content-between align-items-center\">
             <div>
             <h5 class=\"mb-0\">{{ entity.id }}</h5>
             <small class=\"text-muted\">{{ entity.date|date('d/m/Y H:i') }}</small>
