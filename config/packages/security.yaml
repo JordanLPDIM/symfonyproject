@@ -13,10 +13,13 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-        #main:
-            #guard:
-                #authenticators:
-                    #- App\Security\LoginFormAuthenticator
+        main:
+            entry_point: App\Security\LoginFormAuthenticator
+            form_login:
+                login_path: app_login
+                check_path: app_login
+            custom_authenticator:
+                    - App\Security\LoginFormAuthenticator
             logout:
                 path: app_logout
             # http_basic:

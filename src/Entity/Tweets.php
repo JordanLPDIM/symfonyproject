@@ -19,7 +19,7 @@ class Tweets
 
     #[ORM\Column]
      /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="tweets")
+     * @ORM\OneToMany(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private ?int $user = null;

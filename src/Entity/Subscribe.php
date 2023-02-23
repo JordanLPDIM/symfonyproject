@@ -15,14 +15,14 @@ class Subscribe
 
     #[ORM\Column]
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="subscriptions")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
     #[ORM\Column]
       /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="subscribers")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="subscriber_id", referencedColumnName="id")
      */
     private $subscriber;
