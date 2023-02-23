@@ -93,6 +93,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         min-width:280px;
         gap:20px;
         border-radius:6px;
+        height:100%;
         background-color:lightgrey;
     }
 
@@ -126,32 +127,25 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
    <body>
 
-    <div class=\"layout--flex\">
-
-        <div class=\"sidebar\">
-
             ";
-        // line 82
+        // line 79
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 90
-        echo "        </div>
+        // line 107
+        echo "        
 
 
         <div id=\"content\">
             ";
-        // line 94
+        // line 111
         $this->displayBlock('body', $context, $blocks);
-        // line 95
+        // line 112
         echo "        </div>
+  
 
-
-
-    </div>
-    
     ";
-        // line 101
+        // line 115
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 102
+        // line 116
         echo "
 </body>
 </html>
@@ -184,7 +178,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 82
+    // line 79
     public function block_sidebar($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -194,13 +188,57 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
 
-        // line 83
-        echo "            <h2 class=\"text-center mb-5 mt-2\"> Twitter </h2>
-                <ul class=\"sidebar--ul\">
-                    <li class=\"mb-1\"><a href=\"/\">Accueil</a></li>
-                    <li class=\"mb-1\"><a href=\"/\">Profil</a></li>
-                    <li class=\"mb-1\"><a href=\"/login\">Connexion</a></li>
+        // line 80
+        echo "             <nav class=\"navbar navbar-expand-md bg-light navbar-light\">
+             <a class=\"navbar-brand\" href=\"#\">Bad Twitter</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+           
+           
+           ";
+        // line 87
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 87, $this->source); })()), "user", [], "any", false, false, false, 87)) {
+            // line 88
+            echo "
+            <p>Bienvenue ";
+            // line 89
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 89, $this->source); })()), "user", [], "any", false, false, false, 89), "email", [], "any", false, false, false, 89), "html", null, true);
+            echo " !<p>
+
+             ";
+        }
+        // line 92
+        echo "             <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
+             <ul class=\"navbar-nav ml-auto\">
+                <li><a href=\"";
+        // line 94
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">Accueil</a></li>
+                      ";
+        // line 95
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 95, $this->source); })()), "user", [], "any", false, false, false, 95)) {
+            // line 96
+            echo "                        <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Se déconnecter</a></li>
+                    ";
+        } else {
+            // line 98
+            echo "                        <li><a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Se connecter</a></li>
+                    ";
+        }
+        // line 100
+        echo "                        <li><a href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">Créer un compte</a></li>
+           
+                     
                 </ul>
+                </div>
+                </nav>
             ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -210,7 +248,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 94
+    // line 111
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -228,7 +266,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 101
+    // line 115
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -254,7 +292,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  232 => 101,  214 => 94,  198 => 83,  188 => 82,  169 => 5,  155 => 102,  153 => 101,  145 => 95,  143 => 94,  137 => 90,  135 => 82,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  270 => 115,  252 => 111,  234 => 100,  228 => 98,  222 => 96,  220 => 95,  216 => 94,  212 => 92,  206 => 89,  203 => 88,  201 => 87,  192 => 80,  182 => 79,  163 => 5,  149 => 116,  147 => 115,  142 => 112,  140 => 111,  134 => 107,  132 => 79,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -303,6 +341,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
         min-width:280px;
         gap:20px;
         border-radius:6px;
+        height:100%;
         background-color:lightgrey;
     }
 
@@ -336,29 +375,42 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
    <body>
 
-    <div class=\"layout--flex\">
-
-        <div class=\"sidebar\">
-
             {% block sidebar %}
-            <h2 class=\"text-center mb-5 mt-2\"> Twitter </h2>
-                <ul class=\"sidebar--ul\">
-                    <li class=\"mb-1\"><a href=\"/\">Accueil</a></li>
-                    <li class=\"mb-1\"><a href=\"/\">Profil</a></li>
-                    <li class=\"mb-1\"><a href=\"/login\">Connexion</a></li>
+             <nav class=\"navbar navbar-expand-md bg-light navbar-light\">
+             <a class=\"navbar-brand\" href=\"#\">Bad Twitter</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#collapsibleNavbar\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+           
+           
+           {% if app.user %}
+
+            <p>Bienvenue {{ app.user.email }} !<p>
+
+             {% endif %}
+             <div class=\"collapse navbar-collapse\" id=\"collapsibleNavbar\">
+             <ul class=\"navbar-nav ml-auto\">
+                <li><a href=\"{{ path('app_home') }}\">Accueil</a></li>
+                      {% if app.user %}
+                        <li><a href=\"{{ path('app_logout') }}\">Se déconnecter</a></li>
+                    {% else %}
+                        <li><a href=\"{{ path('app_login') }}\">Se connecter</a></li>
+                    {% endif %}
+                        <li><a href=\"{{ path('app_register') }}\">Créer un compte</a></li>
+           
+                     
                 </ul>
+                </div>
+                </nav>
             {% endblock %}
-        </div>
+        
 
 
         <div id=\"content\">
             {% block body %}{% endblock %}
         </div>
+  
 
-
-
-    </div>
-    
     {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 
 </body>

@@ -86,48 +86,71 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
         // line 6
         echo "
-
-<div class=\"accueil--body\">
-
-    <h2> Tweets </h2>
+    
 
  ";
-        // line 16
+        // line 13
         echo "
 
    <br />
 
-        <div class=\"accueil--messages\"> 
+    <div class=\"container w-100\">
+    <h2> Accueil </h2>
+    <button type=\"submit\" class=\"btn btn-primary\"><a href=\"";
+        // line 19
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_new");
+        echo "\"></a> Tweeter</button>
+  <div class=\"row justify-content-center w-100\">
+    <div class=\"col-md-8 w-100\">
+      <ul class=\"list-group mb-20\">
         
-        ";
-        // line 22
+         ";
+        // line 24
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 22, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 24, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 23
-            echo "        <div class=\"tweet\">
-        ";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 24), "html", null, true);
-            echo ": ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 24), "html", null, true);
-            echo "<br>
+            // line 25
+            echo "        <li class=\"list-group-item w-100\">
+        <div class=\"d-flex justify-content-between align-items-center w-100\">
+            <div>
+            <h5 class=\"mb-0\">";
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 28), "html", null, true);
+            echo "</h5>
+            <small class=\"text-muted\">";
+            // line 29
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "date", [], "any", false, false, false, 29), "d/m/Y H:i"), "html", null, true);
+            echo "</small>
+            </div>
+            <div>
+            <button class=\"btn btn-sm btn-primary\">Like</button>
+            </div>
         </div>
+        <p class=\"mt-3 mb-0\">";
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 35), "html", null, true);
+            echo "</p>
+        </li>
+
         
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
-        echo "
-
+        // line 40
+        echo "        <!-- ... -->
+      </ul>
     </div>
-    <a class=\"position-absolute\" style=\"right: 10px;\" href=\"";
-        // line 31
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home_new");
-        echo "\">Ecrire un tweet</a>
+  </div>
 </div>
+
+    
+
+
+
+
+
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -149,7 +172,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     public function getDebugInfo()
     {
-        return array (  128 => 31,  123 => 28,  111 => 24,  108 => 23,  104 => 22,  96 => 16,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  142 => 40,  131 => 35,  122 => 29,  118 => 28,  113 => 25,  109 => 24,  101 => 19,  93 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -160,10 +183,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
 {% block body %}
 
-
-<div class=\"accueil--body\">
-
-    <h2> Tweets </h2>
+    
 
  {#   <form action=\"{{ path('message_new') }}\" method=\"post\">
         <input type=\"text\" id=\"message\" name=\"message\" placeholder=\"Ecrivez votre msg..\">
@@ -173,19 +193,41 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
    <br />
 
-        <div class=\"accueil--messages\"> 
+    <div class=\"container w-100\">
+    <h2> Accueil </h2>
+    <button type=\"submit\" class=\"btn btn-primary\"><a href=\"{{ path('app_home_new') }}\"></a> Tweeter</button>
+  <div class=\"row justify-content-center w-100\">
+    <div class=\"col-md-8 w-100\">
+      <ul class=\"list-group mb-20\">
         
-        {% for entity in entities %}
-        <div class=\"tweet\">
-        {{ entity.id }}: {{ entity.content }}<br>
+         {% for entity in entities %}
+        <li class=\"list-group-item w-100\">
+        <div class=\"d-flex justify-content-between align-items-center w-100\">
+            <div>
+            <h5 class=\"mb-0\">{{ entity.id }}</h5>
+            <small class=\"text-muted\">{{ entity.date|date('d/m/Y H:i') }}</small>
+            </div>
+            <div>
+            <button class=\"btn btn-sm btn-primary\">Like</button>
+            </div>
         </div>
+        <p class=\"mt-3 mb-0\">{{ entity.content }}</p>
+        </li>
+
         
         {% endfor %}
-
-
+        <!-- ... -->
+      </ul>
     </div>
-    <a class=\"position-absolute\" style=\"right: 10px;\" href=\"{{ path('app_home_new') }}\">Ecrire un tweet</a>
+  </div>
 </div>
+
+    
+
+
+
+
+
 {% endblock %}
 ", "home/index.html.twig", "C:\\symfonyproject\\templates\\home\\index.html.twig");
     }

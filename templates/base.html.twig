@@ -42,6 +42,7 @@
         min-width:280px;
         gap:20px;
         border-radius:6px;
+        height:100%;
         background-color:lightgrey;
     }
 
@@ -75,29 +76,42 @@
 
    <body>
 
-    <div class="layout--flex">
-
-        <div class="sidebar">
-
             {% block sidebar %}
-            <h2 class="text-center mb-5 mt-2"> Twitter </h2>
-                <ul class="sidebar--ul">
-                    <li class="mb-1"><a href="/">Accueil</a></li>
-                    <li class="mb-1"><a href="/">Profil</a></li>
-                    <li class="mb-1"><a href="/login">Connexion</a></li>
+             <nav class="navbar navbar-expand-md bg-light navbar-light">
+             <a class="navbar-brand" href="#">Bad Twitter</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+           
+           
+           {% if app.user %}
+
+            <p>Bienvenue {{ app.user.email }} !<p>
+
+             {% endif %}
+             <div class="collapse navbar-collapse" id="collapsibleNavbar">
+             <ul class="navbar-nav ml-auto">
+                <li><a href="{{ path('app_home') }}">Accueil</a></li>
+                      {% if app.user %}
+                        <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                    {% else %}
+                        <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+                    {% endif %}
+                        <li><a href="{{ path('app_register') }}">Créer un compte</a></li>
+           
+                     
                 </ul>
+                </div>
+                </nav>
             {% endblock %}
-        </div>
+        
 
 
         <div id="content">
             {% block body %}{% endblock %}
         </div>
+  
 
-
-
-    </div>
-    
     {% block javascripts %}{{ encore_entry_script_tags('app') }}{% endblock %}
 
 </body>
