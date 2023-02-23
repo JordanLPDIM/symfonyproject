@@ -399,9 +399,6 @@
         <argument type="service" id=".service_locator.CshazM0.App\Controller\WeatherController2"/>
       </call>
     </service>
-    <service id="App\Form\FormTweetType" class="App\Form\FormTweetType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1279,7 +1276,6 @@
         <argument>Symfony\Bridge\Doctrine\Form\Type</argument>
       </argument>
       <argument type="collection">
-        <argument>App\Form\FormTweetType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\TweetsType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -3399,7 +3395,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.bPFAQwB"/>
+      <argument type="service" id=".service_locator.gd5WRwl"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -6151,8 +6147,6 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\WeatherController2" class="App\Controller\WeatherController2" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\WeatherController2" class="App\Controller\WeatherController2" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\WeatherController2" class="App\Controller\WeatherController2" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FormTweetType" class="App\Form\FormTweetType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\FormTweetType" class="App\Form\FormTweetType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TweetsType" class="App\Form\TweetsType" autowire="true" abstract="true"/>
@@ -6731,10 +6725,9 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.bPFAQwB" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.gd5WRwl" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Form\FormTweetType" type="service_closure" id="App\Form\FormTweetType"/>
         <argument key="App\Form\RegistrationFormType" type="service_closure" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\TweetsType" type="service_closure" id="App\Form\TweetsType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
@@ -8433,7 +8426,7 @@
     <service id=".service_locator.V6D1oJY" alias=".service_locator.e_4zbH4"/>
     <service id=".service_locator.hvAGvC." alias=".service_locator.OYwXgsA"/>
     <service id=".service_locator.9XMoc9I" alias=".service_locator.kzegaci"/>
-    <service id=".service_locator.kLsLgoI" alias=".service_locator.bPFAQwB"/>
+    <service id=".service_locator.T2BLJBl" alias=".service_locator.gd5WRwl"/>
     <service id=".service_locator.XW18Svm" alias=".service_locator.TcKhdzh"/>
     <service id=".service_locator.O24_MAy" alias=".service_locator.yY.p4P7"/>
     <service id=".service_locator.VZoQk0z" alias=".service_locator.CshazM0"/>

@@ -48,6 +48,7 @@ class HomeController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $tweet->setDate(new \DateTime()); 
             $entityManager = $this->em->getManager();
             $entityManager->persist($tweet);
             $entityManager->flush();

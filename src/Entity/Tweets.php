@@ -17,15 +17,15 @@ class Tweets
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Content = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $Date = null;
-
     #[ORM\Column]
      /**
      * @ORM\OneToMany(targetEntity="User", mappedBy="tweets")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private ?int $user = null;
+
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $Date = null;
 
     public function getId(): ?int
     {
@@ -56,14 +56,14 @@ class Tweets
         return $this;
     }
 
-    public function getIdUser(): ?int
+    public function getUser(): ?int
     {
         return $this->user;
     }
 
-    public function setIdUser(int $idUser): self
+    public function setUser(int $user): self
     {
-        $this->idUser = $idUser;
+        $this->user = $user;
 
         return $this;
     }
