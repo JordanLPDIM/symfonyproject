@@ -16,7 +16,6 @@ class TweetsType extends AbstractType
     {
         $builder
             ->add('Content')
-            ->add('user')
             
         ;
 

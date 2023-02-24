@@ -30,7 +30,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="app_home")
      */
-    public function index(TweetsRepository $tweetsRepository): Response
+    public function index(Request $request, TweetsRepository $tweetsRepository): Response
     {    
         $apiKey = '1bf50decfeddb5417e85af87bf14cef0';
         $city = 'Calais'; // replace with your desired location
@@ -47,10 +47,33 @@ class HomeController extends AbstractController
 
         $entities = $tweetsRepository->findAll();
 
+
+        $tweet = new Tweets();
+        $form = $this->createForm(TweetsType::class, $tweet);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $tweet->setDate(new \DateTime()); 
+            $user = $this->getUser();
+
+            if ($user) {
+                $userId = $user->getId();
+                $tweet->setUser($userId);
+            } else {
+                return $this->redirectToRoute('app_login');
+            }
+            $entityManager = $this->em->getManager();
+            $entityManager->persist($tweet);
+            $entityManager->flush();
+            return $this->redirect($request->getUri());
+        }
+
+
         return $this->render('home/index.html.twig', [
             'entities' => $entities,
             'temperature' => $temperature,
             'weatherIcon' => $weatherIconCode,
+            'form' => $form->createView(),
         ]);
     }
 

@@ -91,66 +91,75 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
  ";
         // line 13
         echo "
-
-   <br />
-
-    <div class=\"container\">
-    <h2> Accueil </h2>
-    <a href=\"";
-        // line 19
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
-        echo "\" class=\"btn btn-primary mb-4\">Ecrire un Tweet</a>
+<div class=\"container\">
+  <h2 class=\"pb-4 pt-4\">Accueil</h2>
   <div class=\"row justify-content-center\">
     <div class=\"col-md-8\">
-      <ul class=\"list-group mb-20\">
-        
-         ";
-        // line 24
+      <div class=\"mb-4\">
+        ";
+        // line 19
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), 'form_start');
+        echo "
+        <div class=\"input-group\">
+          ";
+        // line 21
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), "Content", [], "any", false, false, false, 21), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "Ecrire un tweet..."]]);
+        echo "
+          <div class=\"input-group-append\">
+            <button type=\"submit\" class=\"btn btn-primary\">Tweeter</button>
+          </div>
+        </div>
+        ";
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 26, $this->source); })()), 'form_end');
+        echo "
+      </div>
+      <ul class=\"list-group mb-4\">
+        ";
+        // line 29
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 24, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) || array_key_exists("entities", $context) ? $context["entities"] : (function () { throw new RuntimeError('Variable "entities" does not exist.', 29, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 25
+            // line 30
             echo "        <li class=\"list-group-item\">
-        <div class=\"d-flex justify-content-between align-items-center\">
+          <div class=\"d-flex justify-content-between align-items-center\">
             <div>
-            <h5 class=\"mb-0\">";
-            // line 28
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 28), "html", null, true);
+              <h5 class=\"mb-0\">";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "id", [], "any", false, false, false, 33), "html", null, true);
             echo "</h5>
-            <small class=\"text-muted\">";
-            // line 29
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "date", [], "any", false, false, false, 29), "d/m/Y H:i"), "html", null, true);
+              <small class=\"text-muted\">";
+            // line 34
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "date", [], "any", false, false, false, 34), "d/m/Y H:i"), "html", null, true);
             echo "</small>
             </div>
             <div>
-            <button class=\"btn btn-sm btn-primary\">Like</button>
+              <button class=\"btn btn-sm btn-primary\">Like</button>
             </div>
-        </div>
-        <p class=\"mt-3 mb-0\">";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 35), "html", null, true);
+          </div>
+          <p class=\"mt-3 mb-0\">";
+            // line 40
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["entity"], "content", [], "any", false, false, false, 40), "html", null, true);
             echo "</p>
         </li>
-
-        
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
-        echo "        <!-- ... -->
-      </ul>
+        // line 43
+        echo "      </ul>
     </div>
   </div>
 </div>
 
+
 <div class=\"position-absolute\" style=\"top: 60px; right: 30px;\">
   <p><img src=\"https://openweathermap.org/img/wn/";
-        // line 47
-        echo twig_escape_filter($this->env, (isset($context["weatherIcon"]) || array_key_exists("weatherIcon", $context) ? $context["weatherIcon"] : (function () { throw new RuntimeError('Variable "weatherIcon" does not exist.', 47, $this->source); })()), "html", null, true);
+        // line 50
+        echo twig_escape_filter($this->env, (isset($context["weatherIcon"]) || array_key_exists("weatherIcon", $context) ? $context["weatherIcon"] : (function () { throw new RuntimeError('Variable "weatherIcon" does not exist.', 50, $this->source); })()), "html", null, true);
         echo ".png\"> ";
-        echo twig_escape_filter($this->env, (isset($context["temperature"]) || array_key_exists("temperature", $context) ? $context["temperature"] : (function () { throw new RuntimeError('Variable "temperature" does not exist.', 47, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["temperature"]) || array_key_exists("temperature", $context) ? $context["temperature"] : (function () { throw new RuntimeError('Variable "temperature" does not exist.', 50, $this->source); })()), "html", null, true);
         echo " °C</p>
 </div>
 
@@ -176,7 +185,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     public function getDebugInfo()
     {
-        return array (  151 => 47,  142 => 40,  131 => 35,  122 => 29,  118 => 28,  113 => 25,  109 => 24,  101 => 19,  93 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  160 => 50,  151 => 43,  142 => 40,  133 => 34,  129 => 33,  124 => 30,  120 => 29,  114 => 26,  106 => 21,  101 => 19,  93 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -194,37 +203,40 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
         <input type=\"submit\" value=\"Envoyer\">
    </form> #}
 
-
-   <br />
-
-    <div class=\"container\">
-    <h2> Accueil </h2>
-    <a href=\"{{ path('app_home') }}\" class=\"btn btn-primary mb-4\">Ecrire un Tweet</a>
+<div class=\"container\">
+  <h2 class=\"pb-4 pt-4\">Accueil</h2>
   <div class=\"row justify-content-center\">
     <div class=\"col-md-8\">
-      <ul class=\"list-group mb-20\">
-        
-         {% for entity in entities %}
-        <li class=\"list-group-item\">
-        <div class=\"d-flex justify-content-between align-items-center\">
-            <div>
-            <h5 class=\"mb-0\">{{ entity.id }}</h5>
-            <small class=\"text-muted\">{{ entity.date|date('d/m/Y H:i') }}</small>
-            </div>
-            <div>
-            <button class=\"btn btn-sm btn-primary\">Like</button>
-            </div>
+      <div class=\"mb-4\">
+        {{ form_start(form) }}
+        <div class=\"input-group\">
+          {{ form_widget(form.Content, {'attr': {'class': 'form-control', 'placeholder': 'Ecrire un tweet...'}}) }}
+          <div class=\"input-group-append\">
+            <button type=\"submit\" class=\"btn btn-primary\">Tweeter</button>
+          </div>
         </div>
-        <p class=\"mt-3 mb-0\">{{ entity.content }}</p>
+        {{ form_end(form) }}
+      </div>
+      <ul class=\"list-group mb-4\">
+        {% for entity in entities %}
+        <li class=\"list-group-item\">
+          <div class=\"d-flex justify-content-between align-items-center\">
+            <div>
+              <h5 class=\"mb-0\">{{ entity.id }}</h5>
+              <small class=\"text-muted\">{{ entity.date|date('d/m/Y H:i') }}</small>
+            </div>
+            <div>
+              <button class=\"btn btn-sm btn-primary\">Like</button>
+            </div>
+          </div>
+          <p class=\"mt-3 mb-0\">{{ entity.content }}</p>
         </li>
-
-        
         {% endfor %}
-        <!-- ... -->
       </ul>
     </div>
   </div>
 </div>
+
 
 <div class=\"position-absolute\" style=\"top: 60px; right: 30px;\">
   <p><img src=\"https://openweathermap.org/img/wn/{{ weatherIcon }}.png\"> {{temperature}} °C</p>

@@ -19,7 +19,6 @@ return [
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
     'app_new_tweet' => [[], ['_controller' => 'App\\Controller\\HomeController::new'], [], [['text', '/new']], [], [], []],
     'location' => [['location'], ['_controller' => 'App\\Controller\\LocationController::index'], [], [['variable', '/', '[^/]++', 'location', true], ['text', '/location']], [], [], []],
-    'app_message' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/message']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
