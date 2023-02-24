@@ -145,10 +145,14 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
   </div>
 </div>
 
-    
-
-
-
+<div class=\"position-absolute\" style=\"top: 60px; right: 30px;\">
+  <p><img src=\"https://openweathermap.org/img/wn/";
+        // line 47
+        echo twig_escape_filter($this->env, (isset($context["weatherIcon"]) || array_key_exists("weatherIcon", $context) ? $context["weatherIcon"] : (function () { throw new RuntimeError('Variable "weatherIcon" does not exist.', 47, $this->source); })()), "html", null, true);
+        echo ".png\"> ";
+        echo twig_escape_filter($this->env, (isset($context["temperature"]) || array_key_exists("temperature", $context) ? $context["temperature"] : (function () { throw new RuntimeError('Variable "temperature" does not exist.', 47, $this->source); })()), "html", null, true);
+        echo " °C</p>
+</div>
 
 
 ";
@@ -172,7 +176,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 
     public function getDebugInfo()
     {
-        return array (  142 => 40,  131 => 35,  122 => 29,  118 => 28,  113 => 25,  109 => 24,  101 => 19,  93 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  151 => 47,  142 => 40,  131 => 35,  122 => 29,  118 => 28,  113 => 25,  109 => 24,  101 => 19,  93 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -222,10 +226,9 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
   </div>
 </div>
 
-    
-
-
-
+<div class=\"position-absolute\" style=\"top: 60px; right: 30px;\">
+  <p><img src=\"https://openweathermap.org/img/wn/{{ weatherIcon }}.png\"> {{temperature}} °C</p>
+</div>
 
 
 {% endblock %}

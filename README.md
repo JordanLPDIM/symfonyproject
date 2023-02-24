@@ -6,10 +6,13 @@
     - Post d'un tweet
     - Affichage des tweets
     - Design avec Bootstrap
+    - Utilisation API OpenWeather pour afficher météo à Calais
 
 # Build le projet:
     - Dans la racine du projet: symfony check:requirements
-    - Si besoin: composer install
+    - composer install
+    - npm install
+    - npm install webpack —-save-dev
     - Créer la base de données : 
         - php bin/console make:migration
         - php bin/console doctrine:migrations:migrate

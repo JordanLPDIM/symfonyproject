@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpClient\HttpClient;
 
 class HomeController extends AbstractController
 {
@@ -31,11 +32,26 @@ class HomeController extends AbstractController
      */
     public function index(TweetsRepository $tweetsRepository): Response
     {    
+        $apiKey = '1bf50decfeddb5417e85af87bf14cef0';
+        $city = 'Calais'; // replace with your desired location
+
+        $httpClient = HttpClient::create();
+        $response = $httpClient->request('GET', "https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey&units=metric");
+
+        $weatherData = json_decode($response->getContent(), true); // decode JSON response
+
+        $temperature = $weatherData['main']['temp']; 
+        
+        $description = $weatherData['weather'][0]['description']; 
+        $weatherIconCode = $weatherData["weather"][0]["icon"];
+
         $entities = $tweetsRepository->findAll();
-       
-        return $this->render('home/index.html.twig',array(
-            'entities' => $entities
-        ));
+
+        return $this->render('home/index.html.twig', [
+            'entities' => $entities,
+            'temperature' => $temperature,
+            'weatherIcon' => $weatherIconCode,
+        ]);
     }
 
     /**
