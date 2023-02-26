@@ -68,3 +68,6 @@ c54027,127.0.0.1,GET,http://localhost:8000/,1677445015,,200
 34ffb2,127.0.0.1,GET,http://localhost:8000/login,1677445016,,200
 b58e0a,127.0.0.1,POST,http://localhost:8000/login,1677445021,,302
 807d44,127.0.0.1,GET,http://localhost:8000/,1677445022,,200
+1f6233,127.0.0.1,GET,http://localhost:8000/,1677445677,,200
+5db078,127.0.0.1,POST,http://localhost:8000/,1677445682,,302
+103d1a,127.0.0.1,GET,http://localhost:8000/,1677445683,,200
