@@ -92,7 +92,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
         // line 13
         echo "
 <div class=\"container\">
-  <h2 class=\"pb-4 pt-4\">Accueil</h2>
+  <h3 class=\"pb-4 pt-4\">Accueil</h3>
   <div class=\"row justify-content-center\">
     <div class=\"col-md-8\">
       <div class=\"mb-4\">
@@ -154,7 +154,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 </div>
 
 
-<div class=\"position-absolute\" style=\"top: 60px; right: 30px;\">
+<div class=\"position-absolute\" style=\"top: 65px; right: 30px;\">
   <p><img src=\"https://openweathermap.org/img/wn/";
         // line 50
         echo twig_escape_filter($this->env, (isset($context["weatherIcon"]) || array_key_exists("weatherIcon", $context) ? $context["weatherIcon"] : (function () { throw new RuntimeError('Variable "weatherIcon" does not exist.', 50, $this->source); })()), "html", null, true);
@@ -204,7 +204,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
    </form> #}
 
 <div class=\"container\">
-  <h2 class=\"pb-4 pt-4\">Accueil</h2>
+  <h3 class=\"pb-4 pt-4\">Accueil</h3>
   <div class=\"row justify-content-center\">
     <div class=\"col-md-8\">
       <div class=\"mb-4\">
@@ -238,7 +238,7 @@ class __TwigTemplate_6240e9e46011d1264aae75bc2e9f86df extends Template
 </div>
 
 
-<div class=\"position-absolute\" style=\"top: 60px; right: 30px;\">
+<div class=\"position-absolute\" style=\"top: 65px; right: 30px;\">
   <p><img src=\"https://openweathermap.org/img/wn/{{ weatherIcon }}.png\"> {{temperature}} °C</p>
 </div>
 

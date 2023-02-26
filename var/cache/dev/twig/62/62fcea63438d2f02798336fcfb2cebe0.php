@@ -79,22 +79,22 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
             ";
         // line 78
         $this->displayBlock('sidebar', $context, $blocks);
-        // line 106
+        // line 107
         echo "        
 
 
         <div id=\"content\">
             ";
-        // line 110
-        $this->displayBlock('body', $context, $blocks);
         // line 111
+        $this->displayBlock('body', $context, $blocks);
+        // line 112
         echo "        </div>
   
 
     ";
-        // line 114
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 115
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 116
         echo "
 </body>
 </html>
@@ -139,7 +139,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
         // line 79
         echo "             <nav class=\"navbar navbar-expand-md bg-light navbar-light\">
-             <a class=\"navbar-brand\" href=\"#\">BadTwitter</a>
+             <a class=\"navbar-brand\" href=\"#\"><h3>BadTwitter</h3></a>
               
            ";
         // line 82
@@ -179,12 +179,14 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
             echo "                        <li class=\"ml-2\"><a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Se connecter</a></li>
+                        <li class=\"ml-2\"><a href=\"";
+            // line 98
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+            echo "\">Créer un compte</a></li>
                     ";
         }
-        // line 99
-        echo "                        <li class=\"ml-2\"><a href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
-        echo "\">Créer un compte</a></li>
+        // line 100
+        echo "                        
            
                      
                 </ul>
@@ -199,7 +201,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 110
+    // line 111
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -217,7 +219,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     }
 
-    // line 114
+    // line 115
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -243,7 +245,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  221 => 114,  203 => 110,  185 => 99,  179 => 97,  173 => 95,  171 => 94,  167 => 93,  159 => 87,  151 => 84,  148 => 83,  146 => 82,  141 => 79,  131 => 78,  112 => 5,  98 => 115,  96 => 114,  91 => 111,  89 => 110,  83 => 106,  81 => 78,  74 => 73,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
+        return array (  223 => 115,  205 => 111,  189 => 100,  184 => 98,  179 => 97,  173 => 95,  171 => 94,  167 => 93,  159 => 87,  151 => 84,  148 => 83,  146 => 82,  141 => 79,  131 => 78,  112 => 5,  98 => 116,  96 => 115,  91 => 112,  89 => 111,  83 => 107,  81 => 78,  74 => 73,  60 => 9,  57 => 7,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -327,7 +329,7 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
 
             {% block sidebar %}
              <nav class=\"navbar navbar-expand-md bg-light navbar-light\">
-             <a class=\"navbar-brand\" href=\"#\">BadTwitter</a>
+             <a class=\"navbar-brand\" href=\"#\"><h3>BadTwitter</h3></a>
               
            {% if app.user %}
 
@@ -345,8 +347,9 @@ class __TwigTemplate_86a9e39b690871689bb6e4c23d65cae5 extends Template
                         <li class=\"ml-2\"><a href=\"{{ path('app_logout') }}\">Se déconnecter</a></li>
                     {% else %}
                         <li class=\"ml-2\"><a href=\"{{ path('app_login') }}\">Se connecter</a></li>
-                    {% endif %}
                         <li class=\"ml-2\"><a href=\"{{ path('app_register') }}\">Créer un compte</a></li>
+                    {% endif %}
+                        
            
                      
                 </ul>

@@ -41,11 +41,19 @@ class TweetsRepository extends ServiceEntityRepository
 
     public function findAll(): array
     {
-    return $this->createQueryBuilder('t')
-        ->orderBy('t.Date', 'DESC')
-        ->getQuery()
-        ->getResult()
-    ;
+        return $this->createQueryBuilder('t')
+            ->orderBy('t.Date', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    public function findAllWithUsernames()
+    {
+        return $this->createQueryBuilder('t')
+            ->leftJoin('t.user', 'u')
+            ->addSelect('u.email')
+            ->getQuery()
+            ->getResult();
     }
 
 //    /**

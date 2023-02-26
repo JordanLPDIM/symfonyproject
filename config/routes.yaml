@@ -8,9 +8,6 @@ app_test:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
 
-weather:
-    path: /weather
-    controller: App\Controller\WeatherController::showWeather
 
 app_home_new:
     path: /new

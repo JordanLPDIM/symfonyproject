@@ -67,6 +67,7 @@ class HomeController extends AbstractController
             $entityManager->flush();
             return $this->redirect($request->getUri());
         }
+        
 
 
         return $this->render('home/index.html.twig', [

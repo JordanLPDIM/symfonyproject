@@ -21,3 +21,8 @@
     - Dans la racine du projet: symfony server:start
     - lien: localhost:8000
 
+# Problèmes rencontrés:
+    Je n'ai pas réussi à faire les liaisons clés étrangères entre mes tables avec les classes entity malgrè avoir essayé plusieurs syntaxes, je n'ai pas pu donc faire de fonctionnalités de like ou abonnement.
+
+# Screenshots & Gif:
+
